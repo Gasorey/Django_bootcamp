@@ -10,18 +10,32 @@
 <title>Escolas</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-static-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'admin:index'%}">Admin</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'app_basico:escola_list' %}">Escolas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Pricing</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
 
-        <ul>    
-            <li><a href="" class="navbar-brand"></a><Escolas/li>
-            <li><a href="" class="nav-link"></a>Admin</li>
-            <li><a href="" class="nav-link"></a>Teste</li>
-        </ul>
-        
-    </nav>
-    {% block body_block %}
-    {% endblock  %}
-    
+        {% block body_block %}
+        {% endblock  %}
+    </div>
+          
+          
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

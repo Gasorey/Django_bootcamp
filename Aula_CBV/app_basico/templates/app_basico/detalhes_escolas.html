@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<div class="jumbotron">
+
+    <h1>Bem vindo aos detalhes!</h1> 
+    <h2>Detalhes da escola:</h2>
+    <p>Nome: {{ detalhes.nome }}</p>
+    <p>Local: {{ detalhes.local }}</p>
+    <p>Email: {{ detalhes.email}}</p>
+    <h2>Estudantes:</h2>
+    {% for estudantes in detalhes.estudantes.all %}
+    <p>{{ estudantes.nome }} tem {{ estudantes.idade }} anos</p>
+    
+    
+    {% endfor %}
+</div>
+{% endblock %}
