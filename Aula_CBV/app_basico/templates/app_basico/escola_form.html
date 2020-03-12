@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<h1>Bem vindo ao formulário para escolas:</h1>
+
+<h1>
+    {% if not form.instance.pk %}
+    Criar escolas
+    {% else %}
+    Atualizar escolas
+    {% endif %}
+
+</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Criar">
+
+    </form>
+
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 class escola(models.Model):
@@ -9,6 +9,11 @@ class escola(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def get_absolute_url(self):
+        return reverse('app_basico:detalhes_escolas',kwargs={'pk':self.pk})
+
+
 
 class estudante(models.Model):
     nome = models.CharField(max_length=256)

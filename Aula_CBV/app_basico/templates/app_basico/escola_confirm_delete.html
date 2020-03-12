@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+
+<h1>Delete {{ escola.nome }}?</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Vai deleta memo bruxão?">
+    <a href="{% url 'app_basico:detalhes_escolas' pk=escola.pk %}">Deleta nois não buxão</a>
+
+    
+    
+    
+</form>
+
+{% endblock %}

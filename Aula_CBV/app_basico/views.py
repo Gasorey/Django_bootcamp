@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,DetailView,ListView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import TemplateView,DetailView,ListView,View, CreateView,UpdateView,DeleteView
 from app_basico.models import escola,estudante
+
 # Create your views here.
 
 class Home(TemplateView):
@@ -16,5 +18,15 @@ class escola_detalhe(DetailView):
     model = escola
     template_name = 'app_basico/detalhes_escolas.html'
 
-
+class criar_escola(CreateView):
+    fields = ('nome','local','email')
+    model = escola
     
+
+class update_escola(UpdateView):
+     fields = ('nome','email')
+     model = escola
+
+class deletar_escola(DeleteView):
+    model = escola
+    success_url = reverse_lazy('app_basico:escola_list')
